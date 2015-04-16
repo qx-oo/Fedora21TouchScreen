@@ -35,7 +35,7 @@ long time;//按下的时常
 int pid_window=-1;//窗口进程
 int window = UNWINDOW;//打开的窗口
 //打开进程队列
-static pid_t prolist[10] = {0};//记录进程pid，进程栈
+static pid_t prolist[500] = {0};//记录进程pid，进程栈
 static int prolist_index = 0;//打开进程游标
 //
 pid_t pidMusic = 0;//记录音乐进程的pid
@@ -172,11 +172,11 @@ void event_Window()
 		}
 	}
 	if(pid != -1 && pid != 0){
-		prolist[prolist_index] = pid;
-		prolist_index ++;
-		//printf("打开进程号:%d,index:%d\n",prolist[prolist_index-1],prolist_index);
+		//prolist[prolist_index] = pid;
+		//prolist_index ++;
+		printf("打开进程号:%d,index:%d\n",prolist[prolist_index-1],prolist_index);
 	}
-	kill(pid_window,SIGKILL);
+	//kill(pid_window,SIGKILL);
 	pid_window = -1;
         window = UNWINDOW;
 }

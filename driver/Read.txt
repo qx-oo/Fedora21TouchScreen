@@ -1,0 +1,6 @@
+/proc/bus/input/devices
+#查看设备驱动对应的event
+insmod
+#装载 
+rmmod
+#卸载
